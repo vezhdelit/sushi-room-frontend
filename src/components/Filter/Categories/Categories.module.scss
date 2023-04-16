@@ -1,0 +1,78 @@
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/normalize';
+
+.categories {
+  display: flex;
+  button{
+
+    background-color: $gray;
+    border-radius: 30px;
+    margin-right: 16px;
+    border: none;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    &:hover {
+        background-color: darken($gray, 2%);
+      }
+
+    &:active {
+        background-color: darken($gray, 5%);
+    }
+
+    &.active {
+        background-color: lighten($red, 40);
+        color: $white;
+
+        &:hover {
+            background-color: lighten($red, 35);
+        }
+
+        svg{
+          path{
+            fill: $red;
+        }
+        }
+    }
+    svg{
+        width: 16px;
+        height: 16px;
+        margin: 1px;
+        path{
+          stroke: transparent;
+          fill: $black;
+        }
+    }
+}
+
+  ul {
+    display: flex;
+    li {
+      background-color: $gray;
+      padding: 12px 25px;
+      border-radius: 30px;
+      margin-right: 16px;
+      font-weight: bold;
+      font-size: 16px;
+  
+      cursor: pointer;
+      transition: background-color 0.1s ease-in-out;
+      @include noselect();
+
+      &:hover {
+        background-color: darken($gray, 2%);
+      }
+
+      &:active {
+        background-color: darken($gray, 5%);
+      }
+
+      &.active {
+        background-color: $black;
+        color: $white;
+      }
+    }
+  }
+}
+

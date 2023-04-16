@@ -1,0 +1,17 @@
+@import './variables';
+@import './normalize';
+
+body {
+    background-color: $background;
+    // zoom: 1.1;
+}
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.container {
+    width: calc(100vw - 100px);
+    height: 100%;
+    margin: 0 auto;
+    max-width: 1366px;
+}

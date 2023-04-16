@@ -1,0 +1,70 @@
+@import '../../assets/scss/variables';
+
+.sliderContainer{
+    width: 1060px;
+    height: 390px;
+    margin: 30px auto;
+    .slider {
+        height: 100%;
+        position: relative;
+        .slidesContainer{
+            overflow: hidden;
+            height: 100%;
+            border-radius: 20px;
+
+        }
+    }
+}
+.slide{
+    width: 100%;
+    height: 100%;
+
+    background-size: cover;
+    background-position: center;
+    transition: inherit;
+    transition: initial;
+    transition: unset;
+    transition:  linear;
+}
+
+
+
+.dotsContainer{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    bottom: 35px;
+    .dot {
+        margin-right: 7px;
+        cursor: pointer;
+        fill:$white;
+        opacity: 0.9;
+
+        &:hover {
+            fill: darken($white, 20%);
+        }
+
+        &.active {
+            fill:$red;
+        }
+    }
+}
+
+.leftArrow{
+    position: absolute;
+    top: 50%;
+    left:-24px;
+    transform: translate(0, -50%);
+    z-index: 1;
+
+    cursor: pointer;
+};
+
+.rightArrow{
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    right:-24px;
+    z-index: 1;
+    cursor: pointer;
+}
