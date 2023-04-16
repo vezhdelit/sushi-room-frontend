@@ -8,79 +8,67 @@
     display: flex;
     align-items: center;
 
-    .logo{
-        display: flex;
-        align-items: center;
-        h3{
-            line-height: 20px;
-          font-size: 18px;
-        }
-        p{
-        line-height: 15px;
-          font-weight: 300;
-          font-size: 16px;
-          color: $dark-gray;
-        }
-    }
-}
+  .logo{
+      display: flex;
+      align-items: center;
+      h3{
+          line-height: 20px;
+        font-size: 18px;
+      }
+      p{
+      line-height: 15px;
+        font-weight: 300;
+        font-size: 16px;
+        color: $dark-gray;
+      }
+  }
 
-.right{
+  .right{
     @include noselect();
     display: flex;
     align-items: center;
     margin-left: auto;
+    button{
+      margin: 0 20px;
+    }
+  }
+
+  @media (max-width: 860px) {
+    padding: 12px 0px ; 
+  }
+
+  @media (max-width: 720px) {
+    .logo{
+      h3{
+        width: 60px;
+      }
+      p{
+        display: none;
+      }
+    }
+  }
+  @media (max-width: 620px) {
+  .right{
+    .search{
+      display: none;
+    }
+  }
+  }
+
+
+  // @media (max-width: 860px) {
+  //   padding: 12px 0px ;
+  //   .logo{
+  //     h3{
+  //       width: 80px;
+  //     }
+  //     p{
+  //       display: none;
+  //     }
+  //   }
+  // }
 }
 
-.cartButton {
-    display: flex;
-    align-items: center;
-    background-color: $red;
-    border-radius: 30px;
-    padding: 8px 20px;
-    min-width: 100px;
-    text-align: center;
-    font-size: 14px;
-    font-weight: 700;
 
-    margin: 0 30px;
-    cursor: pointer;
-    transition: background-color $duration ease-in-out, border-color $duration ease-in-out;
-    border: 1px solid transparent;
-    @include noselect();
 
-    &,
-    span {
-        color: #fff;
-    }
 
-    i,
-    span,
-    path,
-    svg {
-        transition: all $duration ease-in-out;
-    }
-
-    &:hover {
-        background-color: darken($red, 8%);
-    }
-
-    &:active {
-        background-color: darken($red, 12%);
-        transform: translateY(1px);
-    }
-
-    .uah{
-        margin: 5px;
-    }
-    .cart{
-        margin-right: 5px;
-    }
-    .delimiter {
-        width: 1px;
-        height: 25px;
-        background-color: $white;
-        opacity: 0.5;
-        margin-left: 8px;
-        margin-right: 8px;
-    }
-}

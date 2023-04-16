@@ -5,42 +5,73 @@
 .topLine{
     background: $black;
     padding: 3px 0px 6px;
-}
-.nav{
-    display: flex;
-    align-items: center;
 
-    ul {
+    .nav{
+
         display: flex;
-        margin-left: 200px;
-        li{
-            margin-left: 50px;
+        align-items: center;
+    
+        ul {
+            display: flex;
+            margin-left: 200px;
+            li{
+                margin-left: 50px;
+            }
+        }
+
+
+        a,p{
+            text-align: center;
+            font-weight: 300;
+            font-size: 14px;
+            color: $white;
+        }
+    
+        .phone{
+            display: flex;
+            margin-left: auto;
+            align-items: center;
+            svg{
+                align-self:center;
+                fill: $white;
+                margin-right: 5px;
+            }
+            a{
+                align-self:flex-end;
+            }
+            p{
+                margin-left: 15px;
+                color: $dark-gray;
+            }
+        
         }
     }
 
-    a,p{
-        text-align: center;
-        font-weight: 300;
-        font-size: 14px;
-        color: $white;
+        
+    @media (max-width:1240px) {
+        padding: 3px 0px 6px;
+
+        .nav{
+            ul{
+                margin: 0 auto;
+            }
+
+            .phone{
+                p{
+                    display: none;
+                }
+            }
+        }
+
+    }
+
+    @media (max-width:920px) {
+        .nav{
+            ul{
+                display: none;
+            }
+        }
     }
 }
 
-.phone{
-    display: flex;
-    margin-left: auto;
-    align-items: center;
-    svg{
-        align-self:center;
-        fill: $white;
-        margin-right: 5px;
-    }
-    a{
-        align-self:flex-end;
-    }
-    p{
-        margin-left: 15px;
-        color: $dark-gray;
-    }
 
-}

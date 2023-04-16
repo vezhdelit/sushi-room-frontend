@@ -6,7 +6,7 @@ function TopHeader() {
         <div className={styles.topLine}>
             <div className={styles.container}>
                 <div className={styles.nav}>
-                    <div>
+                    <div className={styles.location}>
                         <a href='/*'>Ужгород</a>
                     </div>
 

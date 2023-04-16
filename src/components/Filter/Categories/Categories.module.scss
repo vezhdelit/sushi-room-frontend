@@ -3,6 +3,55 @@
 
 .categories {
   display: flex;
+  overflow: scroll;
+  width: 850px;
+
+  overflow-y: hidden;
+  overflow-x: hidden;
+
+  @media (max-width:1080px){
+    overflow-x: scroll; /* Hide horizontal scrollbar */
+    width: 100%;
+  }
+  
+  .heartButton{
+    background-color: $gray;
+    padding: 12px;
+    border-radius: 30px;
+    margin-right: 16px;
+    border: none;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    &:hover {
+        background-color: darken($gray, 2%);
+      }
+
+    &:active {
+        background-color: darken($gray, 5%);
+    }
+
+    &.active {
+        background-color: lighten($red, 40);
+        color: $white;
+
+        &:hover {
+            background-color: lighten($red, 35);
+        }
+
+        svg{
+            fill: $red;
+        }
+    }
+    svg{
+        width: 16px;
+        height: 16px;
+        stroke: transparent;
+        fill: $black;
+    }
+}
+
   button{
 
     background-color: $gray;
@@ -48,6 +97,8 @@
 
   ul {
     display: flex;
+    width: 720px;
+
     li {
       background-color: $gray;
       padding: 12px 25px;

@@ -2,8 +2,10 @@
 @import '../../../assets/scss/normalize';
 
 .sort {
+  margin: 10px 0px;
   margin-left: auto;
   position: relative;
+  display: flex;
   font-size: 14px;
   @include noselect();
   

@@ -1,0 +1,55 @@
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/normalize';
+
+.cartButton {
+    display: flex;
+    align-items: center;
+    background-color: $red;
+    border-radius: 30px;
+    padding: 8px 20px;
+    min-width: 100px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+    transition: background-color $duration ease-in-out, border-color $duration ease-in-out;
+    border: 1px solid transparent;
+    @include noselect();
+
+    &,
+    span {
+        color: #fff;
+    }
+
+    i,
+    span,
+    path,
+    svg {
+        transition: all $duration ease-in-out;
+    }
+
+    &:hover {
+        background-color: darken($red, 8%);
+    }
+
+    &:active {
+        background-color: darken($red, 12%);
+        transform: translateY(1px);
+    }
+
+    .uah{
+        margin: 5px;
+    }
+    .cart{
+        margin-right: 5px;
+    }
+    .delimiter {
+        width: 1px;
+        height: 25px;
+        background-color: $white;
+        opacity: 0.5;
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+}

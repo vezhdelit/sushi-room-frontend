@@ -17,17 +17,18 @@ function Categories() {
 
     return (
         <div className={styles.categories}>
-            {isAuth &&
-                (
-                    <button
-                        className={showOnlyFavourites ? styles.active : ''}
-                        onClick={() => dispatch(setShowOnlyFavourites(!showOnlyFavourites))}
-                    >
-                        <HeartIcon />
-                    </button>
-                )
-            }
             <ul>
+                {isAuth &&
+                    (
+                        <button
+                            className={`${styles.heartButton} ${showOnlyFavourites ? styles.active : ''}`}
+                            onClick={() => dispatch(setShowOnlyFavourites(!showOnlyFavourites))}
+                        >
+                            <HeartIcon />
+                        </button>
+                    )
+                }
+
                 {categories.map((categoryName, index) => (
                     <li
                         key={index}
@@ -38,7 +39,7 @@ function Categories() {
                     </li>
                 ))}
             </ul>
-        </div>
+        </div >
     )
 }
 

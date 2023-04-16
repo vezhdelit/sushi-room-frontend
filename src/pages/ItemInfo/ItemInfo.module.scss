@@ -38,6 +38,8 @@
             border-radius: 12px;
             height: 360px;
             width: 640px;
+            width: 100%;
+
             overflow: hidden;
             object-fit: cover;
         }
@@ -77,6 +79,29 @@
                 display: -webkit-box;
                 -webkit-line-clamp: 4;
                 -webkit-box-orient: vertical;
+            }
+        }
+    }
+
+    @media (max-width:1080px) {
+        flex-direction: column;
+    }
+    @media (max-width:600px) {
+        .leftBlock{
+            img{
+                height: 220px;
+            }
+        }
+        .rightBlock{
+            width: 100%;
+            .itemInfo{
+                p{
+                    width: 100%;
+                }
+            }
+            .itemBottom{
+                padding: 0;
+                margin: 0 auto;
             }
         }
     }

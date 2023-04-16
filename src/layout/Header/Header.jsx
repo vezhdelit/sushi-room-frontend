@@ -1,17 +1,18 @@
 import { Link, useLocation } from 'react-router-dom';
-import { useSelector } from 'react-redux';
 
-import styles from './Header.module.scss';
-import { ReactComponent as SushiLogo } from '../../assets/svg/sushi-room.svg';
-import { ReactComponent as UAHIcon } from '../../assets/svg/uah.svg';
-import { ReactComponent as CartIcon } from '../../assets/svg/cart.svg';
 
 import Search from '../../components/Filter/Search/Search';
+import CartButton from '../../components/Buttons/CartButton/CartButton';
 import UserButton from '../../components/Buttons/UserButton/UserButton';
+
+import styles from './Header.module.scss';
+
+import { ReactComponent as SushiLogo } from '../../assets/svg/sushi-room.svg';
+
 
 
 function Header() {
-    const { totalPrice, totalCount } = useSelector(state => state.cart);
+    const location = useLocation();
 
     return (
         <div className={styles.container}>
@@ -28,13 +29,12 @@ function Header() {
 
 
                 <div className={styles.right}>
-                    <Search />
-                    <Link to="/cart" className={styles.cartButton}>
-                        <span>{totalPrice}</span>
-                        <UAHIcon className={styles.uah} />
-                        <div className={styles.delimiter}></div>
-                        <CartIcon className={styles.cart} />
-                        <span>{totalCount}</span>
+                    <div className={styles.search} >
+                        {location.pathname === '/' && < Search />}
+                    </div>
+
+                    <Link to="/cart">
+                        <CartButton />
                     </Link>
                     <UserButton />
                 </div>

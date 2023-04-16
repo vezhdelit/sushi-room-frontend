@@ -1,9 +1,21 @@
 @import '../../assets/scss/variables';
+@import '../../assets/scss/global';
 
 .sliderContainer{
+    @media (max-width:1120px) {
+        width: 90%;
+        height: 300px;
+    }
+
+    @media (max-width:750px) {
+        display: none;
+    }
+
+
     width: 1060px;
     height: 390px;
-    margin: 30px auto;
+    margin: 30px auto 0px;
+
     .slider {
         height: 100%;
         position: relative;

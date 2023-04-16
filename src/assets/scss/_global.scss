@@ -3,14 +3,14 @@
 
 body {
     background-color: $background;
-    // zoom: 1.1;
+    overflow-x: hidden;
 }
 body::-webkit-scrollbar {
     display: none;
 }
 
 .container {
-    width: calc(100vw - 100px);
+    width: calc(100vw - 60px);
     height: 100%;
     margin: 0 auto;
     max-width: 1366px;
