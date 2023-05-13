@@ -1,0 +1,14 @@
+@import '../../assets/scss/variables';
+
+.input {
+  border: 1px solid $middle-gray;
+  border-radius: 30px;
+  width: 500px;
+  padding: 20px 30px;
+  font-size: 16px;
+  font-weight: 300;
+
+  &:focus {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+  }
+}

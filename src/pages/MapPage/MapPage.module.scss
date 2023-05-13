@@ -1,0 +1,15 @@
+@import '../../assets/scss/variables';
+@import '../../assets/scss/normalize';
+@import '../../assets/scss/global';
+
+.container {
+  display: flex;
+  align-items: center;
+}
+.map {
+  display: flex;
+  margin: 50px;
+}
+.autocomplete {
+  display: flex;
+}

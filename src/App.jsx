@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { useDispatch } from "react-redux";
+import { useDispatch } from 'react-redux';
 import { fetchAuth } from './redux/slices/authSlice';
 
 import TopLine from './layout/TopLine/TopLine';
@@ -15,6 +15,7 @@ import NotFound from './pages/NotFound/NotFound';
 import Login from './pages/Authentication/Login/Login';
 import Registration from './pages/Authentication/Registration/Registration';
 import Profile from './pages/Authentication/Profile/Profile';
+import MapPage from './pages/MapPage/MapPage';
 
 function App() {
   const dispatch = useDispatch();
@@ -38,11 +39,12 @@ function App() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/login" element={<Login />} />
         <Route path="/registration" element={<Registration />} />
+        <Route path="/map" element={<MapPage />} />
       </Routes>
 
       <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
