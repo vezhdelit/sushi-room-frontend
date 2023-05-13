@@ -2,6 +2,7 @@ import React from 'react';
 import { useJsApiLoader } from '@react-google-maps/api';
 
 const MAPS_API_KEY = import.meta.env.VITE_MAPS_API_KEY;
+console.log(MAPS_API_KEY);
 
 import Map from '../../components/Map/Map';
 import Autocomplete from '../../components/Autocomplete/Autocomplete';
