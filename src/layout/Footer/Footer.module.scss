@@ -2,8 +2,55 @@
 @import '../../assets/scss/normalize';
 @import '../../assets/scss/global';
 
+.footer {
+  background: $black;
 
-.footer{
-    background: $black;
-    height: 300px;
+  * {
+    color: white;
+  }
+}
+
+.nav {
+  display: flex;
+
+  .column {
+    display: block;
+    margin: 50px;
+    h4 {
+      margin: 10px 0px;
+      font-size: 18px;
+      font-weight: 400;
+    }
+    a {
+      display: block;
+      margin: 10px 0px;
+
+      font-size: 16px;
+      font-weight: 300;
+    }
+  }
+
+  div:last-child {
+    margin-left: auto;
+
+    h4 {
+      text-align: end;
+    }
+    a {
+      text-align: end;
+    }
+  }
+}
+
+.bottom {
+  border-top: 1px solid $gray;
+
+  display: flex;
+  padding: 30px;
+  p {
+    font-weight: 300;
+  }
+  p:last-child {
+    margin-left: auto;
+  }
 }

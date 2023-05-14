@@ -2,38 +2,45 @@
 @import '../../assets/scss/normalize';
 @import '../../assets/scss/global';
 
-.container {
+.pageTitle {
+  margin-top: 30px;
+  margin-left: 50px;
+}
+.content {
   display: flex;
   align-items: center;
-}
-.map {
-  display: flex;
-  margin: 50px;
-}
+  margin: 30px 50px 75px;
 
-.rightBlock {
-  h4 {
-    margin: 0px 30px 10px;
-  }
-  .us {
-    border: 1px solid $middle-gray;
-    border-radius: 30px;
-    width: 600px;
-    padding: 20px 30px;
-    font-size: 16px;
-    font-weight: 300;
-
-    &:focus {
-      border: 1px solid rgba(0, 0, 0, 0.2);
-    }
-  }
-  .autocomplete {
+  .map {
     display: flex;
-    input {
-      width: 600px;
-    }
   }
-  .arrow {
-    margin: 20px 100px;
+
+  .rightBlock {
+    margin-left: 30px;
+    margin-bottom: 30px;
+    h4 {
+      margin: 0px 30px 10px;
+    }
+    .us {
+      border: 1px solid $middle-gray;
+      border-radius: 30px;
+      width: 600px;
+      padding: 20px 30px;
+      font-size: 16px;
+      font-weight: 300;
+
+      &:focus {
+        border: 1px solid rgba(0, 0, 0, 0.2);
+      }
+    }
+    .autocomplete {
+      display: flex;
+      input {
+        width: 600px;
+      }
+    }
+    .arrow {
+      margin: 20px 100px;
+    }
   }
 }

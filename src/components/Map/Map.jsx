@@ -43,11 +43,13 @@ const Map = ({ center }) => {
       <GoogleMap
         mapContainerStyle={containerStyle}
         center={center}
-        zoom={15}
+        zoom={13}
         onLoad={onLoad}
         onUnmount={onUnmount}
         options={defaultOptions}
       >
+        <Marker position={center} />
+
         <>
           <Marker
             position={sushiroomCenter}
@@ -62,7 +64,6 @@ const Map = ({ center }) => {
           <Circle center={sushiroomCenter} radius={1000} options={greenZone} />
           <Circle center={sushiroomCenter} radius={2000} options={yellowZone} />
         </>
-        <Marker position={center} />
       </GoogleMap>{' '}
     </div>
   );
@@ -90,13 +91,6 @@ const yellowZone = {
   fillOpacity: 0.1,
   strokeColor: '#FBC02D',
   fillColor: '#FBC02D',
-};
-const farOptions = {
-  ...defaultOptions,
-  zIndex: 1,
-  fillOpacity: 0.05,
-  strokeColor: '#FF5252',
-  fillColor: '#FF5252',
 };
 
 export default Map;
