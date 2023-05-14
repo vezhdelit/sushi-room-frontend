@@ -74,7 +74,7 @@ const Autocomplete = ({ isLoaded, onSelect }) => {
         value={value}
         onChange={handleInput}
         disabled={!ready}
-        placeholder="Адреса доставки?"
+        placeholder="Введіть адресу доставки.."
       ></input>
       {status === 'OK' && <ul>{renderSuggestions()}</ul>}
     </div>

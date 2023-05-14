@@ -2,10 +2,11 @@ import React from 'react';
 import { useJsApiLoader } from '@react-google-maps/api';
 
 const MAPS_API_KEY = import.meta.env.VITE_MAPS_API_KEY;
-console.log(MAPS_API_KEY);
 
 import Map from '../../components/Map/Map';
 import Autocomplete from '../../components/Autocomplete/Autocomplete';
+
+import { ReactComponent as LocationArrowSvg } from '../../assets/svg/location-arrow.svg';
 import styles from './MapPage.module.scss';
 
 const defaultCenter = {
@@ -36,8 +37,18 @@ const MapPage = () => {
       ) : (
         <h2>Loading</h2>
       )}
-      <div className={styles.autocomplete}>
-        <Autocomplete isLoaded={isLoaded} onSelect={onPlaceSelect} />
+      <div className={styles.rightBlock}>
+        <h4>Наша адреса</h4>
+        <div className={styles.us}>
+          Студентська набережна, 2, Ужгород, Закарпатська область, Україна
+        </div>
+
+        <LocationArrowSvg className={styles.arrow} />
+
+        <h4>Адреса доставки</h4>
+        <div className={styles.autocomplete}>
+          <Autocomplete isLoaded={isLoaded} onSelect={onPlaceSelect} />
+        </div>
       </div>
     </div>
   );

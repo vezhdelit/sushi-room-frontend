@@ -2,68 +2,60 @@
 @import '../../assets/scss/normalize';
 @import '../../assets/scss/global';
 
-.blockContainer{
-    margin-top: 200px;
-    background: $gray;
-    height: 120px;
+.blockContainer {
+  display: flex;
+  margin-top: 200px;
+  background: $gray;
+  height: 120px;
 }
 
-.nav{
+.nav {
+  display: flex;
+  align-items: center;
+
+  .logos {
     display: flex;
     align-items: center;
+    margin: 0 40px 0 20px;
+    svg {
+      margin-right: 15px;
+    }
+  }
 
+  .infoBlock {
+    h4 {
+      font-size: 16px;
+    }
 
-    .logos{
-        display: flex;
-        align-items: center;
-        margin: 0 40px 0 20px;
-        svg{
-            margin-right: 15px;
-        }
+    p {
+      font-weight: 400;
+      font-size: 14px;
+      color: $dark-gray;
     }
-    
-    
-    .infoBlock{
-        
-        h4{
-            font-size: 16px;
-        }
-    
-        p{
-            font-weight: 400;
-            font-size: 14px;
-            color: $dark-gray;
-        }
-        margin-right: 60px;
+    margin-right: 60px;
+  }
+
+  .imageContainer {
+    display: flex;
+    width: 400px;
+    height: 120px;
+    margin-left: auto;
+
+    cursor: pointer;
+    @include noselect();
+
+    img {
+      overflow: hidden;
+      width: 400px;
+      height: 120px;
+      object-fit: cover;
+      filter: brightness(60%);
     }
-    
-    .imageContainer{
-        width: 400px;
-        height: 120px;
-        margin-left: auto;
-    
-        cursor: pointer;
-        transition: background-color 0.1s ease-in-out;
-        @include noselect();
-    
-        img{
-            overflow: hidden;
-            width: 400px;
-            height: 120px;
-            object-fit: cover;
-        }
-        h4{
-            position: relative;
-            color:$white;
-    
-            font-weight: 700;
-            font-size: 18px;
-    
-            bottom: 70px;
-            left: 140px;
-            
-            z-index: 1;
-        }
+    h4 {
+      position: absolute;
+      align-self: center;
+      right: 230px;
+      color: $white;
     }
-    
+  }
 }
