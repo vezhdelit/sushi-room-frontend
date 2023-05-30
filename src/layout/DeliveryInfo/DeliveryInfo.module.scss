@@ -40,7 +40,7 @@
     width: 400px;
     height: 120px;
     margin-left: auto;
-
+    
     cursor: pointer;
     @include noselect();
 
@@ -53,8 +53,8 @@
     }
     h4 {
       position: absolute;
-      align-self: center;
-      right: 230px;
+
+      transform: translate(125%, 275%);
       color: $white;
     }
   }
