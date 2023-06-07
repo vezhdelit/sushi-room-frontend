@@ -3,7 +3,7 @@ import axios from 'axios';
 const SERVER_URL = import.meta.env.VITE_SERVER_URL;
 
 const instance = axios.create({
-  baseURL: SERVER_URL,
+  baseURL: 'https://sushi-room-backend.onrender.com/',
 });
 
 instance.interceptors.request.use((config) => {
