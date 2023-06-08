@@ -1,7 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
 
 
-import Search from '../../components/Filter/Search/Search';
+import Search from '../../components/Filters/Search/Search';
 import CartButton from '../../components/Buttons/CartButton/CartButton';
 import UserButton from '../../components/Buttons/UserButton/UserButton';
 

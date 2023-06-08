@@ -1,14 +1,14 @@
 import ImageSlider from '../../components/ImageSlider/ImageSlider';
-import Filter from '../../components/Filter/Filter';
-import Items from '../../components/Items/Items';
+import FilterSection from '../../layout/FilterSection/FilterSection';
+import ItemsSection from '../../layout/ItemsSection/ItemsSection';
 import DeliveryInfo from '../../layout/DeliveryInfo/DeliveryInfo';
 
 function Home() {
     return (
         <>
             <ImageSlider />
-            <Filter />
-            <Items />
+            <FilterSection />
+            <ItemsSection />
             <DeliveryInfo />
         </>
     );
