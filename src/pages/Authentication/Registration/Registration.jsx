@@ -30,10 +30,10 @@ const Registration = () => {
 
   const onSubmit = async (values) => {
     const data = await dispatch(fetchRegister(values));
-    if (data.payload && 'token' in data.payload) {
+    if ((data.payload == "success") && 'token' in data.payload) {
       window.localStorage.setItem('token', data.payload.token);
     } else {
-      alert('Не зареєструватись.', data.payload.msg);
+      alert('Не вдалось зареєструватись.');
     }
   };
 
@@ -68,6 +68,7 @@ const Registration = () => {
           label="Номер телефона"
           error={Boolean(errors.phoneNumber?.message)}
           helperText={errors.phoneNumber?.message}
+          type="tel"
           {...register('phoneNumber', { required: 'Вкажіть номер телефона' })}
           fullWidth
         />

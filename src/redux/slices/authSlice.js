@@ -39,6 +39,7 @@ export const removeFavourite = createAsyncThunk(
 const initialState = {
     data: null,
     status: 'pending',
+    error: null,
 };
 
 const authSlice = createSlice({
@@ -61,6 +62,7 @@ const authSlice = createSlice({
         })
         builder.addCase(fetchLogin.rejected, (state, action) => {
             state.status = 'error';
+            state.error = action.error
             state.data = null;
         })
         ////////////////////////////////////////
@@ -76,6 +78,8 @@ const authSlice = createSlice({
         builder.addCase(fetchRegister.rejected, (state, action) => {
             state.status = 'error';
             state.data = null;
+            state.error = action.error
+
         })
 
         ////////////////////////////////////////
@@ -91,6 +95,8 @@ const authSlice = createSlice({
         builder.addCase(fetchAuth.rejected, (state, action) => {
             state.status = 'error';
             state.data = null;
+            state.error = action.error
+
         })
 
         /////////////////////////////////////////
