@@ -72,8 +72,12 @@ function Cart() {
               ))}
             </div>
             <div className={styles.bottomBlock}>
-              <h4>Кількість: {totalCount} шт</h4>
-              <h4 className={styles.sum}>Сума замовлення: {totalPrice} грн</h4>
+              <h5>Кількість:</h5>
+              <h4>{totalCount} шт</h4>
+              <div className={styles.sum}>
+                <h5>Сума замовлення: </h5>
+                <h4>{totalPrice} грн</h4>
+              </div>
             </div>
           </div>
 
