@@ -4,8 +4,8 @@ import { GoogleMap, Marker, Circle } from '@react-google-maps/api';
 import styles from './Map.module.scss';
 
 const containerStyle = {
-  width: '600px',
-  height: '400px',
+  width: `100%`,
+  height: '100%',
 };
 
 const defaultOptions = {
@@ -39,7 +39,7 @@ const Map = ({ center }) => {
   };
 
   return (
-    <div>
+    <div className={styles.mapContainer}>
       <GoogleMap
         mapContainerStyle={containerStyle}
         center={center}
