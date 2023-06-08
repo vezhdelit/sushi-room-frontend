@@ -1,0 +1,38 @@
+@import '../../../assets/scss/variables';
+
+.search {
+    position: relative;
+
+    input{
+        border: 1px solid $middle-gray;
+        border-radius: 25px;    
+        width: 240px;
+        padding: 10px 40px 12px;
+        font-size: 16px;
+        font-weight: 300;
+
+        &:focus {
+            border: 1px solid rgba(0, 0, 0, 0.2);
+        }
+    }
+}
+
+
+.searchIcon{
+    position: absolute;
+    left: 14px;
+    top: 12px;
+    color: $middle-gray;
+}
+
+.clearIcon {
+    opacity: 0.3;
+    position: absolute;
+    right: 16px;
+    top: 12px;
+    cursor: pointer;
+  
+    &:hover {
+      opacity: 0.8;
+    }
+  }
