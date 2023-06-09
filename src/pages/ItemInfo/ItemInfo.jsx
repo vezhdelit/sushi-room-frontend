@@ -15,7 +15,7 @@ import ContentLoader from 'react-content-loader';
 
 const ItemInfo = () => {
   const dispatch = useDispatch();
-
+  
   const { imageUrl, description, quantity, weight, title, compounds, price, category } =
     useSelector((state) => state.item.itemById);
   const { status } = useSelector((state) => state.item);
@@ -31,6 +31,7 @@ const ItemInfo = () => {
   React.useEffect(() => {
     getItemById();
     // eslint-disable-next-line react-hooks/exhaustive-deps
+    window.scrollTo(0, 0);
   }, [_id]);
 
   const onClickAdd = () => {

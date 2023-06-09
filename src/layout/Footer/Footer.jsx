@@ -2,7 +2,7 @@ import styles from './Footer.module.scss';
 
 function Footer() {
   return (
-    <div className={styles.footer}>
+    <footer className={styles.footer}>
       <div className={styles.container}>
         <div className={styles.nav}>
           <div className={styles.column}>
@@ -34,7 +34,7 @@ function Footer() {
           <p> Розробник Веждел Василь, 2023</p>
         </div>
       </div>
-    </div>
+    </footer>
   );
 }
 

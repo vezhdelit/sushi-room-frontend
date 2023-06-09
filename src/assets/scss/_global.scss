@@ -8,7 +8,10 @@ body {
 body::-webkit-scrollbar {
     display: none;
 }
+footer{
+    background-color: $red;
 
+}
 .container {
     width: calc(100vw - 60px);
     height: 100%;

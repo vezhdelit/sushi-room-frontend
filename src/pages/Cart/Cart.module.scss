@@ -9,7 +9,7 @@
 .cart {
   display: flex;
   margin: auto;
-
+  margin-bottom: 100px;
   @media (max-width: 1340px) {
     display: block;
   }
