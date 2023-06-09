@@ -12,6 +12,8 @@ import Cart from './pages/Cart/Cart';
 import ItemInfo from './pages/ItemInfo/ItemInfo';
 import NotFound from './pages/NotFound/NotFound';
 
+import AdminPanel from './pages/AdminPanel/AdminPanel';
+
 import Login from './pages/Authentication/Login/Login';
 import Registration from './pages/Authentication/Registration/Registration';
 import Profile from './pages/Authentication/Profile/Profile';
@@ -35,6 +37,8 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/item/:_id" element={<ItemInfo />} />
         <Route path="*" element={<NotFound />} />
+
+        <Route path="/adminpanel" element={<AdminPanel />} />
 
         <Route path="/profile" element={<Profile />} />
         <Route path="/login" element={<Login />} />
