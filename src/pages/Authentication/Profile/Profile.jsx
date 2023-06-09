@@ -1,7 +1,7 @@
 import React from 'react'
 import { Navigate } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { selectIsAuth } from "../../../redux/slices/authSlice";
+import { useSelector, useDispatch } from "react-redux";
+import { selectIsAuth, fetchAuth, deleteAuth } from "../../../redux/slices/authSlice";
 
 import styles from './Profile.module.scss';
 
@@ -10,10 +10,18 @@ import EmailSvg from '@mui/icons-material/MailOutline';
 import MobileSvg from '@mui/icons-material/Smartphone';
 import LockSvg from '@mui/icons-material/LockOutlined';
 
+
 const Profile = () => {
+    const dispatch = useDispatch();
     const isAuth = useSelector(selectIsAuth);
     const user = useSelector((state) => state.auth.data)
 
+    const onDeleteAccount = async() =>{
+        if (window.confirm('Ви впевнені що хочете видалити аккаунт?')) {
+            await dispatch(deleteAuth());
+            await dispatch(fetchAuth());
+        }
+    }
 
     if (!isAuth) {
         return <Navigate to='/login' />;
@@ -65,6 +73,8 @@ const Profile = () => {
                             <p>* * * * * * * *</p>
                         </div>
                     </div>
+
+                    <button onClick={onDeleteAccount}> Видалити аккаунт</button>
                 </div>
             </div>
         </div>

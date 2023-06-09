@@ -22,6 +22,14 @@ export const fetchAuth = createAsyncThunk(
     }
 );
 
+export const deleteAuth = createAsyncThunk(
+    'auth/deleteAuthStatus', async () => {
+        console.log("delete");
+        const response = await axios.delete(`/auth`);
+        return response.data
+    }
+);
+
 export const addFavourite = createAsyncThunk(
     'auth/addFavouriteStatus', async (params) => {
         const response = await axios.patch(`/auth/addFavourite`, params);
@@ -100,6 +108,7 @@ const authSlice = createSlice({
         })
 
         /////////////////////////////////////////
+
 
         builder.addCase(addFavourite.fulfilled, (state, action) => {
             state.data.favourites = action.payload.favourites;

@@ -37,6 +37,20 @@
             margin-top: 5px;
             font-size: 16px;
         }
+        button{
+            display: block;
+            text-align: center;
+            background-color: transparent;
+            border-color: transparent;
+
+            font-size: 16px;
+            font-weight: 400;
+            margin: 24px auto;
+            color: $red;
+
+            cursor: pointer;
+            
+        }
     }
 }
 .block{
