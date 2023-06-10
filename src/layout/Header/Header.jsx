@@ -30,13 +30,16 @@ function Header() {
 
                 <div className={styles.right}>
                     <div className={styles.search} >
-                        {location.pathname === '/' && < Search />}
+                        {(location.pathname === '/' ||  location.pathname === '/adminpanel') && < Search />}
                     </div>
-
-                    <Link to="/cart">
+                    {location.pathname !== '/adminpanel' &&                     
+                    <Link className={styles.cart}  to="/cart">
                         <CartButton />
                     </Link>
-                    <UserButton />
+                    }
+                    <div className={styles.user} >
+                        <UserButton />
+                    </div>
                 </div>
             </div>
         </div>

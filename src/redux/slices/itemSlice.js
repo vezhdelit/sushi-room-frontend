@@ -15,6 +15,11 @@ export const fetchItemById = createAsyncThunk('fetch/fetchItemByIdStatus', async
   return response.data;
 });
 
+export const deleteItemById = createAsyncThunk('fetch/deleteItemByIdStatus', async (_id) => {
+  const response = await axios.delete(`items/${_id}`);
+  return response.data;
+});
+
 const initialState = {
   status: 'pending',
   items: [],
@@ -52,6 +57,18 @@ const itemSlice = createSlice({
     builder.addCase(fetchItemById.rejected, (state, action) => {
       state.status = 'error';
       state.itemById = {};
+    });
+
+    ////////////////////////////////////////////////////////////////
+
+    builder.addCase(deleteItemById.pending, (state, action) => {
+      state.status = 'pending';
+    });
+    builder.addCase(deleteItemById.fulfilled, (state, action) => {
+      state.status = 'success';
+    });
+    builder.addCase(deleteItemById.rejected, (state, action) => {
+      state.status = 'error';
     });
   },
 });

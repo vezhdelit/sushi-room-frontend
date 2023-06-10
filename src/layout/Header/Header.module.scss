@@ -28,9 +28,6 @@
     display: flex;
     align-items: center;
     margin-left: auto;
-    button{
-      margin: 0 20px;
-    }
   }
 
   @media (max-width: 860px) {
@@ -55,20 +52,14 @@
   }
   }
 
-
-  // @media (max-width: 860px) {
-  //   padding: 12px 0px ;
-  //   .logo{
-  //     h3{
-  //       width: 80px;
-  //     }
-  //     p{
-  //       display: none;
-  //     }
-  //   }
-  // }
 }
 
+.cart{
+  margin-left: 20px;
+}
+.user{
+  margin-left: 20px;
+}
 
 
 
