@@ -25,10 +25,25 @@ export const addItem = createAsyncThunk('fetch/addItemStatus', async (params) =>
   return response.data;
 });
 
+export const editItem = createAsyncThunk('fetch/editItemStatus', async (params) => {
+  console.log(params);
+  const response = await axios.patch(`items/${params._id}`, params);
+  return response.data;
+});
+
 const initialState = {
   status: 'pending',
   items: [],
-  itemById: {},
+  itemById: {
+    imageUrl:' ',
+    title: ' ',
+    price: 0,
+    quantity: 0,
+    weight:0,
+    description: ' ',
+    compounds: ' ',
+    category: ' ',
+  },
 };
 
 const itemSlice = createSlice({
@@ -86,6 +101,18 @@ const itemSlice = createSlice({
       state.status = 'success';
     });
     builder.addCase(addItem.rejected, (state, action) => {
+      state.status = 'error';
+    });
+
+    ////////////////////////////////////////////////////////////////
+
+    builder.addCase(editItem.pending, (state, action) => {
+      state.status = 'pending';
+    });
+    builder.addCase(editItem.fulfilled, (state, action) => {
+      state.status = 'success';
+    });
+    builder.addCase(editItem.rejected, (state, action) => {
       state.status = 'error';
     });
   },

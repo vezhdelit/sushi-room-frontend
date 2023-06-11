@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { deleteItemById, fetchItems } from '../../../redux/slices/itemSlice';
+import { deleteItemById, fetchItems, fetchItemById } from '../../../redux/slices/itemSlice';
 
 import { ReactComponent as EditIcon } from '../../../assets/svg/edit.svg';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
@@ -45,7 +45,7 @@ function AdminItem({ _id, title, quantity, weight, price, imageUrl, compounds })
                 <div className={styles.price}>{price} ₴</div>
             </div>
             <div className={styles.buttons}>
-                <Link to={`/item/${_id}`}>
+                <Link to={`/adminpanel/edititem/${_id}`}>
                     <EditIcon className={styles.edit}/>
                 </Link>
 

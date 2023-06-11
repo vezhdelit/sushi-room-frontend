@@ -14,6 +14,7 @@ import NotFound from './pages/NotFound/NotFound';
 
 import AdminPanel from './pages/AdminPanel/AdminPanel';
 import AddItemPage from './pages/AddItemPage/AddItemPage';
+import EditItemPage from './pages/EditItemPage/EditItemPage';
 
 import Login from './pages/Authentication/Login/Login';
 import Registration from './pages/Authentication/Registration/Registration';
@@ -41,6 +42,7 @@ function App() {
 
         <Route path="/adminpanel" element={<AdminPanel />} />
         <Route path="/adminpanel/additem" element={<AddItemPage />} />
+        <Route path="/adminpanel/edititem/:_id" element={<EditItemPage />} />
 
         <Route path="/profile" element={<Profile />} />
         <Route path="/login" element={<Login />} />
