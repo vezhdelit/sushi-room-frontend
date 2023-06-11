@@ -2,7 +2,7 @@ import ContentLoader from 'react-content-loader';
 import AddIcon from '@mui/icons-material/Add';
 import styles from './AdminItem.module.scss';
 
-function AdminItemPlaceholder() {
+function AddItem() {
     return (
         <div className={styles.item}>
         <AddIcon className={styles.plus}/>
@@ -24,4 +24,4 @@ function AdminItemPlaceholder() {
     );
 }
 
-export default AdminItemPlaceholder;
+export default AddItem;

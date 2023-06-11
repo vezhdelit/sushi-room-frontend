@@ -30,7 +30,7 @@ const Registration = () => {
 
   const onSubmit = async (values) => {
     const data = await dispatch(fetchRegister(values));
-    if ((data.payload == "success") && 'token' in data.payload) {
+    if ((data.payload) && 'token' in data.payload) {
       window.localStorage.setItem('token', data.payload.token);
     } else {
       alert('Не вдалось зареєструватись.');

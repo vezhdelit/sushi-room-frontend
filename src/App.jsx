@@ -13,6 +13,7 @@ import ItemInfo from './pages/ItemInfo/ItemInfo';
 import NotFound from './pages/NotFound/NotFound';
 
 import AdminPanel from './pages/AdminPanel/AdminPanel';
+import AddItemPage from './pages/AddItemPage/AddItemPage';
 
 import Login from './pages/Authentication/Login/Login';
 import Registration from './pages/Authentication/Registration/Registration';
@@ -39,6 +40,7 @@ function App() {
         <Route path="*" element={<NotFound />} />
 
         <Route path="/adminpanel" element={<AdminPanel />} />
+        <Route path="/adminpanel/additem" element={<AddItemPage />} />
 
         <Route path="/profile" element={<Profile />} />
         <Route path="/login" element={<Login />} />

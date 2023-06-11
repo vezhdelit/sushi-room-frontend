@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import AdminItem from '../../components/Items/AdminItem/AdminItem';
-import AdminItemPlaceholder from '../../components/Items/AdminItem/AdminItemPlaceholder';
+import AddItem from '../../components/Items/AdminItem/AddItem';
 import ItemPlaceholder from '../../components/Items/Item/ItemPlaceholder';
 
 import styles from './AdminPanel.module.scss';
@@ -36,8 +36,8 @@ const AdminPanel = () => {
         <div className={styles.container}>
             <h2 className={styles.title}>Адмін панель</h2>
             <div className={styles.items}>
-                <Link>
-                    <AdminItemPlaceholder/>
+                <Link to='/adminpanel/additem'>
+                    <AddItem/>
                 </Link>
                 {status === 'error' ?
                 (<div>
