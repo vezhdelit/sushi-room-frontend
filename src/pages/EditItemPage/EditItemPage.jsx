@@ -5,6 +5,7 @@ import { useParams, Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
 import TextField from '@mui/material/TextField';
+import axios from '../../middleware/axios';
 
 import Button from '../../components/Buttons/Button/Button';
 
@@ -13,6 +14,21 @@ import { editItem } from '../../redux/slices/itemSlice';
 
 const EditItemPage = () => {
   const dispatch = useDispatch();
+  const [imgUrl, setImgUrl] = React.useState('');
+
+  const handleChangeFile = async(event)=>{
+    try {
+     const formData = new FormData();
+     const file = event.target.files[0];
+     formData.append('image', file);
+     const {data} = await axios.post('/upload', formData);
+     setImgUrl(`https://sushi-room-backend.herokuapp.com${data.url}`);
+    } catch (error) {
+     console.log(error);
+     alert('Помилка при завантаженні файлу');
+    }
+ }
+
   const {
     register,
     handleSubmit,
@@ -46,6 +62,7 @@ const EditItemPage = () => {
   }, [_id]);
 
   React.useEffect(() => {
+    setImgUrl(item.imageUrl)
     reset(item);
   }, [item]);
 
@@ -66,14 +83,30 @@ const EditItemPage = () => {
       <h2>Відредагувати існуючий товар</h2>
 
       <form onSubmit={handleSubmit(onSubmit)}>
+        <input 
+          type='file'
+          onChange={handleChangeFile}
+        >
+        </input>
+
         <TextField
           className={styles.field}
-          label="Адреса картинки"
+          value={imgUrl}
+          label="Посилання"
           error={Boolean(errors.imageUrl?.message)}
           helperText={errors.imageUrl?.message}
-          {...register('imageUrl', { required: "Вкажіть адресу товару" })}
-          sx={{ m: 1, width: '62ch' }}
+          {...register('imageUrl', { required: "Завантажте зображення" })}
+          sx={{ m: 1, width: '38ch' }}
         />
+
+        {
+          imgUrl && (
+            <>
+              <img src={imgUrl} alt='item image'></img>
+            </>
+          )
+        }
+
 
         <TextField
           className={styles.field}

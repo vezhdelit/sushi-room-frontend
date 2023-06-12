@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
 import TextField from '@mui/material/TextField';
+import axios from '../../middleware/axios';
 
 import Button from '../../components/Buttons/Button/Button';
 
@@ -11,6 +12,7 @@ import { addItem } from '../../redux/slices/itemSlice';
 
 const AddItemPage = () => {
   const dispatch = useDispatch();
+  const [imgUrl, setImgUrl] = React.useState('');
 
   const {
     register,
@@ -19,7 +21,7 @@ const AddItemPage = () => {
     formState: { errors, isValid },
   } = useForm({
     defaultValues: {
-      imageUrl:'',
+      imageUrl: '',
       title: '',
       price: '',
       quantity: '',
@@ -30,6 +32,19 @@ const AddItemPage = () => {
     },
     mode: 'onChange',
   });
+
+  const handleChangeFile = async(event)=>{
+     try {
+      const formData = new FormData();
+      const file = event.target.files[0];
+      formData.append('image', file);
+      const {data} = await axios.post('/upload', formData);
+      setImgUrl(`https://sushi-room-backend.herokuapp.com${data.url}`);
+     } catch (error) {
+      console.log(error);
+      alert('Помилка при завантаженні файлу');
+     }
+  }
 
   const onSubmit = async (values) => {
     const data = await dispatch(addItem(values));
@@ -46,14 +61,28 @@ const AddItemPage = () => {
       <h2>Додати новий товар</h2>
 
       <form onSubmit={handleSubmit(onSubmit)}>
+        <input 
+          type='file'
+          onChange={handleChangeFile}
+          >
+        </input>
         <TextField
           className={styles.field}
-          label="Адреса картинки"
+          value={imgUrl}
+          label="Посилання"
           error={Boolean(errors.imageUrl?.message)}
           helperText={errors.imageUrl?.message}
-          {...register('imageUrl', { required: "Вкажіть адресу товару" })}
-          sx={{ m: 1, width: '62ch' }}
+          {...register('imageUrl', { required: "Завантажте зображення" })}
+          sx={{ m: 1, width: '38ch' }}
         />
+
+        {
+          imgUrl && (
+            <>
+              <img src={imgUrl} alt='item image'></img>
+            </>
+          )
+        }
 
         <TextField
           className={styles.field}
