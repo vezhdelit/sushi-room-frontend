@@ -23,6 +23,7 @@ const EditItemPage = () => {
      formData.append('image', file);
      const {data} = await axios.post('/upload', formData);
      setImgUrl(`https://sushi-room-backend.herokuapp.com${data.url}`);
+     setValue('imageUrl',`https://sushi-room-backend.herokuapp.com${data.url}`)
     } catch (error) {
      console.log(error);
      alert('Помилка при завантаженні файлу');
@@ -33,6 +34,7 @@ const EditItemPage = () => {
     register,
     handleSubmit,
     setError,
+    setValue,
     reset,
     formState: { errors, isValid },
   } = useForm({
@@ -46,7 +48,7 @@ const EditItemPage = () => {
       compounds: '',
       category: '',
     },
-    mode: 'onChange',
+    mode: 'all',
   });
 
   const { _id } = useParams();
@@ -96,13 +98,13 @@ const EditItemPage = () => {
           error={Boolean(errors.imageUrl?.message)}
           helperText={errors.imageUrl?.message}
           {...register('imageUrl', { required: "Завантажте зображення" })}
-          sx={{ m: 1, width: '38ch' }}
-        />
+          sx={{ m: 1, width: '62ch' }}
+          />
 
         {
           imgUrl && (
             <>
-              <img src={imgUrl} alt='item image'></img>
+              <img className={styles.image} src={imgUrl} alt='item image'></img>
             </>
           )
         }

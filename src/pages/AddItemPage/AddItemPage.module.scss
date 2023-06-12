@@ -13,10 +13,19 @@
     font-weight: bold !important;
     margin-bottom: 25px !important;
   }
+  input{margin-left: 10px;}
+
 }
 
 .field {
   margin-bottom: 10px !important;
+}
+
+.image{
+  margin-left: 25px;
+  overflow: hidden;
+  width: 520px;
+  object-fit: cover;
 }
 
 .submitButton {
