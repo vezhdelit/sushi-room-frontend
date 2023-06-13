@@ -1,6 +1,6 @@
-@import '../../assets/scss/variables';
-@import '../../assets/scss/normalize';
-@import '../../assets/scss/global';
+@import "../../assets/scss/variables";
+@import "../../assets/scss/normalize";
+@import "../../assets/scss/global";
 
 .blockContainer {
   display: flex;
@@ -40,7 +40,7 @@
     width: 400px;
     height: 120px;
     margin-left: auto;
-    
+
     cursor: pointer;
     @include noselect();
 

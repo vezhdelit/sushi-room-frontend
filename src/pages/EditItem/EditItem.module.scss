@@ -1,5 +1,5 @@
-@import '../../assets/scss/variables';
-@import '../../assets/scss/global';
+@import "../../assets/scss/variables";
+@import "../../assets/scss/global";
 
 .root {
   width: 640px;
@@ -13,15 +13,16 @@
     font-weight: bold !important;
     margin-bottom: 25px !important;
   }
-  input{margin-left: 10px;}
-
+  input {
+    margin-left: 10px;
+  }
 }
 
 .field {
   margin-bottom: 10px !important;
 }
 
-.image{
+.image {
   margin-left: 25px;
   overflow: hidden;
   width: 520px;

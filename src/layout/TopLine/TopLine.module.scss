@@ -1,77 +1,71 @@
-@import '../../assets/scss/variables';
-@import '../../assets/scss/normalize';
-@import '../../assets/scss/global';
+@import "../../assets/scss/variables";
+@import "../../assets/scss/normalize";
+@import "../../assets/scss/global";
 
-.topLine{
-    background: $black;
+.topLine {
+  background: $black;
+  padding: 3px 0px 6px;
+
+  .nav {
+    display: flex;
+    align-items: center;
+
+    ul {
+      display: flex;
+      margin-left: 200px;
+      li {
+        margin-left: 50px;
+      }
+    }
+
+    a,
+    p {
+      text-align: center;
+      font-weight: 300;
+      font-size: 14px;
+      color: $white;
+    }
+
+    .phone {
+      display: flex;
+      margin-left: auto;
+      align-items: center;
+      svg {
+        align-self: center;
+        fill: $white;
+        margin-right: 5px;
+      }
+      a {
+        align-self: flex-end;
+      }
+      p {
+        margin-left: 15px;
+        color: $dark-gray;
+      }
+    }
+  }
+
+  @media (max-width: 1240px) {
     padding: 3px 0px 6px;
 
-    .nav{
+    .nav {
+      ul {
+        margin: 0 auto;
+      }
 
-        display: flex;
-        align-items: center;
-    
-        ul {
-            display: flex;
-            margin-left: 200px;
-            li{
-                margin-left: 50px;
-            }
+      .phone {
+        p {
+          display: none;
         }
-
-
-        a,p{
-            text-align: center;
-            font-weight: 300;
-            font-size: 14px;
-            color: $white;
-        }
-    
-        .phone{
-            display: flex;
-            margin-left: auto;
-            align-items: center;
-            svg{
-                align-self:center;
-                fill: $white;
-                margin-right: 5px;
-            }
-            a{
-                align-self:flex-end;
-            }
-            p{
-                margin-left: 15px;
-                color: $dark-gray;
-            }
-        
-        }
+      }
     }
+  }
 
-        
-    @media (max-width:1240px) {
-        padding: 3px 0px 6px;
-
-        .nav{
-            ul{
-                margin: 0 auto;
-            }
-
-            .phone{
-                p{
-                    display: none;
-                }
-            }
-        }
-
+  @media (max-width: 920px) {
+    .nav {
+      ul {
+        display: none;
+      }
     }
-
-    @media (max-width:920px) {
-        .nav{
-            ul{
-                display: none;
-            }
-        }
-    }
+  }
 }
-
-

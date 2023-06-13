@@ -19,7 +19,7 @@ const discounts = [
   { code: "sushiroom15", discount: 0.15 },
 ];
 
-function Cart() {
+const Cart = () => {
   const dispatch = useDispatch();
   const [promo, setPromo] = React.useState("");
   const { items, totalPrice } = useSelector((state) => state.cart);
@@ -109,6 +109,6 @@ function Cart() {
       )}
     </div>
   );
-}
+};
 
 export default Cart;

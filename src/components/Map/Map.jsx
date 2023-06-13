@@ -1,11 +1,11 @@
-import React from 'react';
-import { GoogleMap, Marker, Circle } from '@react-google-maps/api';
+import React from "react";
+import { GoogleMap, Marker, Circle } from "@react-google-maps/api";
 
-import styles from './Map.module.scss';
+import styles from "./Map.module.scss";
 
 const containerStyle = {
   width: `100%`,
-  height: '100%',
+  height: "100%",
 };
 
 const defaultOptions = {
@@ -53,18 +53,18 @@ const Map = ({ center }) => {
         <>
           <Marker
             position={sushiroomCenter}
-            icon={{ url: '/location.svg' }}
+            icon={{ url: "/location.svg" }}
             label={{
               className: styles.label,
-              text: 'SUSHIROOM',
-              fontWeight: '900',
-              color: 'black',
+              text: "SUSHIROOM",
+              fontWeight: "900",
+              color: "black",
             }}
           />
           <Circle center={sushiroomCenter} radius={1000} options={greenZone} />
           <Circle center={sushiroomCenter} radius={2000} options={yellowZone} />
         </>
-      </GoogleMap>{' '}
+      </GoogleMap>{" "}
     </div>
   );
 };
@@ -82,15 +82,15 @@ const greenZone = {
   ...defaultOption,
   zIndex: 3,
   fillOpacity: 0.2,
-  strokeColor: '#8BC34A',
-  fillColor: '#8BC34A',
+  strokeColor: "#8BC34A",
+  fillColor: "#8BC34A",
 };
 const yellowZone = {
   ...defaultOption,
   zIndex: 2,
   fillOpacity: 0.1,
-  strokeColor: '#FBC02D',
-  fillColor: '#FBC02D',
+  strokeColor: "#FBC02D",
+  fillColor: "#FBC02D",
 };
 
 export default Map;

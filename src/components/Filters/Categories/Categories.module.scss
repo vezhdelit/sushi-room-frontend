@@ -1,5 +1,5 @@
-@import '../../../assets/scss/variables';
-@import '../../../assets/scss/normalize';
+@import "../../../assets/scss/variables";
+@import "../../../assets/scss/normalize";
 
 .categories {
   display: flex;
@@ -9,12 +9,12 @@
   overflow-y: hidden;
   overflow-x: hidden;
 
-  @media (max-width:1080px){
+  @media (max-width: 1080px) {
     overflow-x: scroll; /* Hide horizontal scrollbar */
     width: 100%;
   }
-  
-  .heartButton{
+
+  .heartButton {
     background-color: $gray;
     padding: 12px;
     border-radius: 30px;
@@ -25,35 +25,34 @@
     cursor: pointer;
 
     &:hover {
-        background-color: darken($gray, 2%);
-      }
+      background-color: darken($gray, 2%);
+    }
 
     &:active {
-        background-color: darken($gray, 5%);
+      background-color: darken($gray, 5%);
     }
 
     &.active {
-        background-color: lighten($red, 40);
-        color: $white;
+      background-color: lighten($red, 40);
+      color: $white;
 
-        &:hover {
-            background-color: lighten($red, 35);
-        }
+      &:hover {
+        background-color: lighten($red, 35);
+      }
 
-        svg{
-            fill: $red;
-        }
+      svg {
+        fill: $red;
+      }
     }
-    svg{
-        width: 16px;
-        height: 16px;
-        stroke: transparent;
-        fill: $black;
+    svg {
+      width: 16px;
+      height: 16px;
+      stroke: transparent;
+      fill: $black;
     }
-}
+  }
 
-  button{
-
+  button {
     background-color: $gray;
     border-radius: 30px;
     margin-right: 16px;
@@ -63,37 +62,37 @@
     cursor: pointer;
 
     &:hover {
-        background-color: darken($gray, 2%);
-      }
+      background-color: darken($gray, 2%);
+    }
 
     &:active {
-        background-color: darken($gray, 5%);
+      background-color: darken($gray, 5%);
     }
 
     &.active {
-        background-color: lighten($red, 40);
-        color: $white;
+      background-color: lighten($red, 40);
+      color: $white;
 
-        &:hover {
-            background-color: lighten($red, 35);
-        }
+      &:hover {
+        background-color: lighten($red, 35);
+      }
 
-        svg{
-          path{
-            fill: $red;
+      svg {
+        path {
+          fill: $red;
         }
-        }
+      }
     }
-    svg{
-        width: 16px;
-        height: 16px;
-        margin: 1px;
-        path{
-          stroke: transparent;
-          fill: $black;
-        }
+    svg {
+      width: 16px;
+      height: 16px;
+      margin: 1px;
+      path {
+        stroke: transparent;
+        fill: $black;
+      }
     }
-}
+  }
 
   ul {
     display: flex;
@@ -106,7 +105,7 @@
       margin-right: 16px;
       font-weight: bold;
       font-size: 16px;
-  
+
       cursor: pointer;
       transition: background-color 0.1s ease-in-out;
       @include noselect();
@@ -126,4 +125,3 @@
     }
   }
 }
-

@@ -1,60 +1,58 @@
-@import '../../../assets/scss/variables';
-@import '../../../assets/scss/global';
+@import "../../../assets/scss/variables";
+@import "../../../assets/scss/global";
 
+.content {
+  display: flex;
+  margin: 30px auto 150px;
+  .menu {
+    width: 295px;
+    height: 270px;
+    overflow: hidden;
+    box-shadow: 0px 4px 12px 4px rgba(0, 0, 0, 0.07);
+    border-radius: 12px;
+  }
 
-.content{
-    display: flex;
-    margin: 30px auto 150px;
-    .menu{
-        width: 295px;
-        height: 270px;
-        overflow: hidden;
-        box-shadow: 0px 4px 12px 4px rgba(0, 0, 0, 0.07);
-        border-radius: 12px;
+  .info {
+    padding: 50px;
+    margin: 0 auto;
+    width: 500px;
+    height: 500px;
+    overflow: hidden;
+    box-shadow: 0px 4px 12px 4px rgba(0, 0, 0, 0.07);
+    border-radius: 12px;
+
+    svg {
+      width: 24px;
+      height: 24px;
+      margin-right: 15px;
     }
-    
-    .info{
-        padding: 50px;
-        margin: 0 auto;
-        width: 500px;
-        height: 500px;
-        overflow: hidden;
-        box-shadow: 0px 4px 12px 4px rgba(0, 0, 0, 0.07);
-        border-radius: 12px;
-
-        svg{
-            width: 24px;
-            height: 24px;
-            margin-right: 15px;
-        }
-        h2{
-            display: flex;
-            margin: 0 auto;
-            margin-bottom: 10px;
-        }
-        p{
-            color: $dark-gray;
-            margin-top: 5px;
-            font-size: 16px;
-        }
-        button{
-            display: block;
-            text-align: center;
-            background-color: transparent;
-            border-color: transparent;
-
-            font-size: 16px;
-            font-weight: 400;
-            margin: 24px auto;
-            color: $red;
-
-            cursor: pointer;
-            
-        }
+    h2 {
+      display: flex;
+      margin: 0 auto;
+      margin-bottom: 10px;
     }
+    p {
+      color: $dark-gray;
+      margin-top: 5px;
+      font-size: 16px;
+    }
+    button {
+      display: block;
+      text-align: center;
+      background-color: transparent;
+      border-color: transparent;
+
+      font-size: 16px;
+      font-weight: 400;
+      margin: 24px auto;
+      color: $red;
+
+      cursor: pointer;
+    }
+  }
 }
-.block{
-    display: flex;
-    align-items: center;
-    padding: 30px 10px 0px;
+.block {
+  display: flex;
+  align-items: center;
+  padding: 30px 10px 0px;
 }

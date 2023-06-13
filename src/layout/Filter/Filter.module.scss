@@ -1,0 +1,15 @@
+@import "../../assets/scss/variables";
+@import "../../assets/scss/global";
+@import "../../assets/scss/normalize";
+
+.filter {
+  display: flex;
+  padding: 0px 20px;
+  align-items: center;
+  margin-top: 30px;
+
+  @media (max-width: 1240px) {
+    flex-direction: column;
+    padding: 0px;
+  }
+}

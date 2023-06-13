@@ -1,27 +1,37 @@
-import React from 'react';
-import { useParams, Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchItemById } from '../../redux/slices/itemSlice';
-import { addItem, removeItem } from '../../redux/slices/cartSlice';
+import React from "react";
+import { useParams, Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchItemById } from "../../redux/slices/itemSlice";
+import { addItem, removeItem } from "../../redux/slices/cartSlice";
 
-import styles from './ItemInfo.module.scss';
+import styles from "./FullItem.module.scss";
 
-import CircleIcon from '@mui/icons-material/Circle';
+import CircleIcon from "@mui/icons-material/Circle";
 
-import Button from '../../components/Buttons/Button/Button';
-import CounterButton from '../../components/Buttons/CounterButton/CounterButton';
+import Button from "../../components/Buttons/Button/Button";
+import CounterButton from "../../components/Buttons/CounterButton/CounterButton";
 
-import ContentLoader from 'react-content-loader';
+import ContentLoader from "react-content-loader";
 
-const ItemInfo = () => {
+const FullItem = () => {
   const dispatch = useDispatch();
-  
-  const { imageUrl, description, quantity, weight, title, compounds, price, category } =
-    useSelector((state) => state.item.itemById);
+
+  const {
+    imageUrl,
+    description,
+    quantity,
+    weight,
+    title,
+    compounds,
+    price,
+    category,
+  } = useSelector((state) => state.item.itemById);
   const { status } = useSelector((state) => state.item);
   const { _id } = useParams();
 
-  const cartItem = useSelector((state) => state.cart.items.find((obj) => obj._id === _id));
+  const cartItem = useSelector((state) =>
+    state.cart.items.find((obj) => obj._id === _id)
+  );
   const count = cartItem ? cartItem.count : 0;
 
   const getItemById = async () => {
@@ -69,10 +79,16 @@ const ItemInfo = () => {
 
         <div className={styles.content}>
           <div className={styles.leftBlock}>
-            {status === 'error' ? (
+            {status === "error" ? (
               <h2>Відбулась помилка 😕</h2>
             ) : (
-              <>{status === 'pending' ? <ItemPlaceholder /> : <img src={`${imageUrl}`} alt="" />}</>
+              <>
+                {status === "pending" ? (
+                  <ItemPlaceholder />
+                ) : (
+                  <img src={`${imageUrl}`} alt="" />
+                )}
+              </>
             )}
           </div>
           <div className={styles.rightBlock}>
@@ -94,7 +110,11 @@ const ItemInfo = () => {
             <div className={styles.itemBottom}>
               <div className={styles.price}>{price} ₴</div>
               {count > 0 ? (
-                <CounterButton onClickRemove={onClickRemove} onClickAdd={onClickAdd} size="large">
+                <CounterButton
+                  onClickRemove={onClickRemove}
+                  onClickAdd={onClickAdd}
+                  size="large"
+                >
                   {count}
                 </CounterButton>
               ) : (
@@ -125,4 +145,4 @@ const ItemPlaceholder = () => {
   );
 };
 
-export default ItemInfo;
+export default FullItem;

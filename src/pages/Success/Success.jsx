@@ -6,9 +6,9 @@ import Button from "../../components/Buttons/Button/Button";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import { clearAllItems } from "../../redux/slices/cartSlice";
 
-import styles from "./SuccessPage.module.scss";
+import styles from "./Success.module.scss";
 
-function SuccessPage() {
+const Success = () => {
   const dispatch = useDispatch();
   React.useEffect(() => {
     dispatch(clearAllItems());
@@ -30,6 +30,6 @@ function SuccessPage() {
       </div>
     </div>
   );
-}
+};
 
-export default SuccessPage;
+export default Success;

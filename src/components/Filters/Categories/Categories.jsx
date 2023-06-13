@@ -9,7 +9,7 @@ import { selectIsAuth } from "../../../redux/slices/authSlice";
 import styles from "./Categories.module.scss";
 import { ReactComponent as HeartIcon } from "../../../assets/svg/heart.svg";
 
-function Categories() {
+const Categories = () => {
   const dispatch = useDispatch();
   const category = useSelector((state) => state.filter.category);
 
@@ -54,6 +54,6 @@ function Categories() {
       </ul>
     </div>
   );
-}
+};
 
 export default Categories;

@@ -1,9 +1,9 @@
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
-import PhoneIcon from '@mui/icons-material/Phone';
-import styles from './TopLine.module.scss';
+import PhoneIcon from "@mui/icons-material/Phone";
+import styles from "./TopLine.module.scss";
 
-function TopHeader() {
+const TopHeader = () => {
   return (
     <div className={styles.topLine}>
       <div className={styles.container}>
@@ -29,9 +29,7 @@ function TopHeader() {
               <a href="/*">Підтримка</a>
             </li>
             <li>
-              <Link to="/adminpanel">
-                Адмін панель
-              </Link>            
+              <Link to="/admin">Адмін панель</Link>
             </li>
           </ul>
 
@@ -44,6 +42,6 @@ function TopHeader() {
       </div>
     </div>
   );
-}
+};
 
 export default TopHeader;

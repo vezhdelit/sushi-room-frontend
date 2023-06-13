@@ -1,6 +1,6 @@
-import styles from './Footer.module.scss';
+import styles from "./Footer.module.scss";
 
-function Footer() {
+const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
@@ -13,8 +13,12 @@ function Footer() {
 
           <div className={styles.column}>
             <h4>Програмний код</h4>
-            <a href="https://github.com/vezhdelit/sushi-room-frontend.git">Фронтенд</a>
-            <a href="https://github.com/vezhdelit/sushi-room-backend.git">Бекенд</a>
+            <a href="https://github.com/vezhdelit/sushi-room-frontend.git">
+              Фронтенд
+            </a>
+            <a href="https://github.com/vezhdelit/sushi-room-backend.git">
+              Бекенд
+            </a>
           </div>
 
           <div className={styles.column}>
@@ -36,6 +40,6 @@ function Footer() {
       </div>
     </footer>
   );
-}
+};
 
 export default Footer;

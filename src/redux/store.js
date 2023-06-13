@@ -1,4 +1,4 @@
-import { configureStore, combineReducers } from '@reduxjs/toolkit';
+import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import {
   persistStore,
   persistReducer,
@@ -8,14 +8,14 @@ import {
   PERSIST,
   PURGE,
   REGISTER,
-} from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
+} from "redux-persist";
+import storage from "redux-persist/lib/storage";
 
-import cart from './slices/cartSlice';
-import filter from './slices/filterSlice';
-import auth from './slices/authSlice';
-import item from './slices/itemSlice';
-import ad from './slices/adSlice';
+import cart from "./slices/cartSlice";
+import filter from "./slices/filterSlice";
+import auth from "./slices/authSlice";
+import item from "./slices/itemSlice";
+import ad from "./slices/adSlice";
 
 const rootReducer = combineReducers({
   cart,
@@ -26,9 +26,9 @@ const rootReducer = combineReducers({
 });
 
 const persistConfig = {
-  key: 'root',
+  key: "root",
   storage: storage,
-  whitelist: ['cart'],
+  whitelist: ["cart"],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

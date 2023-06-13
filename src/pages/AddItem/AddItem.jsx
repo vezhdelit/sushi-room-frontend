@@ -1,17 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import TextField from "@mui/material/TextField";
 
 import axios from "../../middleware/axios";
 
 import Button from "../../components/Buttons/Button/Button";
 
-import styles from "./AddItemPage.module.scss";
+import styles from "./AddItem.module.scss";
 import { addItem } from "../../redux/slices/itemSlice";
 
-const AddItemPage = () => {
+const AddItem = () => {
   const dispatch = useDispatch();
   const [imgUrl, setImgUrl] = React.useState("");
 
@@ -165,8 +165,7 @@ const AddItemPage = () => {
           Додати товар
         </Button>
 
-        <Link to="/adminpanel" className={styles.redirect}>
-          {" "}
+        <Link to="/admin" className={styles.redirect}>
           Повернутись назад
         </Link>
       </form>
@@ -174,4 +173,4 @@ const AddItemPage = () => {
   );
 };
 
-export default AddItemPage;
+export default AddItem;

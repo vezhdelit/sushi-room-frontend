@@ -1,46 +1,47 @@
-@import '../../../assets/scss/variables';
-@import '../../../assets/scss/normalize';
+@import "../../../assets/scss/variables";
+@import "../../../assets/scss/normalize";
 
-.button{
-    background-color: $red;
-    border-radius: 8px;
-    padding: 10px 16px;
-    min-width: 120px;
-    height: 40px;
+.button {
+  background-color: $red;
+  border-radius: 8px;
+  padding: 10px 16px;
+  min-width: 120px;
+  height: 40px;
 
-    text-align: center;
-    cursor: pointer;
-    transition: background-color $duration ease-in-out, border-color $duration ease-in-out;
-    border: 1px solid transparent;
-    @include noselect();
-  
-    &,
-    span {
-      color: #fff;
-      font-weight: 700;
-        font-size: 16px;
-        line-height: 19px;
-    }
-  
-    i,
-    span,
-    path,
-    svg {
-      transition: all $duration ease-in-out;
-    }
+  text-align: center;
+  cursor: pointer;
+  transition: background-color $duration ease-in-out,
+    border-color $duration ease-in-out;
+  border: 1px solid transparent;
+  @include noselect();
 
-    &:hover {
-        background-color: darken($red, 8%);
-    }
-    
-    &:active {
-        background-color: darken($red, 12%);
-        transform: translateY(1px);
-    }
+  &,
+  span {
+    color: #fff;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  i,
+  span,
+  path,
+  svg {
+    transition: all $duration ease-in-out;
+  }
+
+  &:hover {
+    background-color: darken($red, 8%);
+  }
+
+  &:active {
+    background-color: darken($red, 12%);
+    transform: translateY(1px);
+  }
 }
 
-.disabled{
-  background-color:darken($middle-gray, 5%) ;
+.disabled {
+  background-color: darken($middle-gray, 5%);
   border-radius: 8px;
   padding: 10px 16px;
   min-width: 120px;
@@ -55,8 +56,8 @@
   span {
     color: #fff;
     font-weight: 700;
-      font-size: 16px;
-      line-height: 19px;
+    font-size: 16px;
+    line-height: 19px;
   }
 
   i,
@@ -67,16 +68,16 @@
   }
 
   &:hover {
-      background-color: $dark-gray;
+    background-color: $dark-gray;
   }
-  
+
   &:active {
-      background-color: $dark-gray;
-      transform: translateY(1px);
+    background-color: $dark-gray;
+    transform: translateY(1px);
   }
 }
 
-.large{
+.large {
   padding: 14px 20px;
   font-size: 18px;
   min-width: 150px;

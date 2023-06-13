@@ -1,50 +1,48 @@
-@import '../../../assets/scss/variables';
-@import '../../../assets/scss/normalize';
+@import "../../../assets/scss/variables";
+@import "../../../assets/scss/normalize";
 
+.counterButton {
+  border-radius: 10px;
+  border: 2px solid;
+  border-color: transparent;
+  background-color: lighten($red, 45);
 
-.counterButton{
-    border-radius: 10px;
-    border: 2px solid;
-    border-color: transparent;
-    background-color: lighten($red, 45);
+  height: 40px;
+  min-width: 120px;
+  text-align: center;
+  cursor: pointer;
+  @include noselect();
 
-    height: 40px;
-    min-width: 120px;
-    text-align: center;
+  display: flex;
+  align-items: center;
+
+  span {
+    color: $red;
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  svg {
+    margin: 0px auto;
+
     cursor: pointer;
     @include noselect();
-
-    display: flex;
-    align-items: center;
-
-    span{
-        color: $red;
-        font-size: 18px;
-        font-weight: 700;    
-    }
-
-    svg{
-        margin: 0px auto;
-
-        cursor: pointer;
-        @include noselect();
-        color: $red;
-    }
-
+    color: $red;
+  }
 }
 
-.large{
-    padding: 14px 20px;
+.large {
+  padding: 14px 20px;
 
-    min-width: 150px;
-    height: 50px;
+  min-width: 150px;
+  height: 50px;
 
-    span{
-        padding: 0 12px;
-        font-size: 22px;
-    };
-
-    svg{
-        margin: 0px auto;
-    }
+  span {
+    padding: 0 12px;
+    font-size: 22px;
   }
+
+  svg {
+    margin: 0px auto;
+  }
+}

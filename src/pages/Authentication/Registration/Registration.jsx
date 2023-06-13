@@ -1,13 +1,13 @@
-import React from 'react';
-import { Navigate, Link } from 'react-router-dom';
-import { useForm } from 'react-hook-form';
-import { useDispatch, useSelector } from 'react-redux';
-import TextField from '@mui/material/TextField';
+import React from "react";
+import { Navigate, Link } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import { useDispatch, useSelector } from "react-redux";
+import TextField from "@mui/material/TextField";
 
-import Button from '../../../components/Buttons/Button/Button';
+import Button from "../../../components/Buttons/Button/Button";
 
-import styles from './Registration.module.scss';
-import { fetchRegister, selectIsAuth } from '../../../redux/slices/authSlice';
+import styles from "./Registration.module.scss";
+import { fetchRegister, selectIsAuth } from "../../../redux/slices/authSlice";
 
 const Registration = () => {
   const dispatch = useDispatch();
@@ -20,20 +20,20 @@ const Registration = () => {
     formState: { errors, isValid },
   } = useForm({
     defaultValues: {
-      fullName: '',
-      email: '',
-      phoneNumber: '',
-      password: '',
+      fullName: "",
+      email: "",
+      phoneNumber: "",
+      password: "",
     },
-    mode: 'onChange',
+    mode: "onChange",
   });
 
   const onSubmit = async (values) => {
     const data = await dispatch(fetchRegister(values));
-    if ((data.payload) && 'token' in data.payload) {
-      window.localStorage.setItem('token', data.payload.token);
+    if (data.payload && "token" in data.payload) {
+      window.localStorage.setItem("token", data.payload.token);
     } else {
-      alert('Не вдалось зареєструватись.');
+      alert("Не вдалось зареєструватись.");
     }
   };
 
@@ -51,7 +51,9 @@ const Registration = () => {
           label="Ім'я Прізвище"
           error={Boolean(errors.fullName?.message)}
           helperText={errors.fullName?.message}
-          {...register('fullName', { required: "Вкажіть ваше Прізвище та Ім'я" })}
+          {...register("fullName", {
+            required: "Вкажіть ваше Прізвище та Ім'я",
+          })}
           fullWidth
         />
         <TextField
@@ -60,7 +62,7 @@ const Registration = () => {
           error={Boolean(errors.email?.message)}
           helperText={errors.email?.message}
           type="email"
-          {...register('email', { required: 'Вкажіть email' })}
+          {...register("email", { required: "Вкажіть email" })}
           fullWidth
         />
         <TextField
@@ -69,7 +71,7 @@ const Registration = () => {
           error={Boolean(errors.phoneNumber?.message)}
           helperText={errors.phoneNumber?.message}
           type="tel"
-          {...register('phoneNumber', { required: 'Вкажіть номер телефона' })}
+          {...register("phoneNumber", { required: "Вкажіть номер телефона" })}
           fullWidth
         />
         <TextField
@@ -77,15 +79,20 @@ const Registration = () => {
           label="Пароль"
           error={Boolean(errors.password?.message)}
           helperText={errors.password?.message}
-          {...register('password', { required: 'Вкажіть email' })}
+          {...register("password", { required: "Вкажіть email" })}
           fullWidth
         />
-        <Button type="submit" className={styles.submitButton} disabled={!isValid} size="large">
+        <Button
+          type="submit"
+          className={styles.submitButton}
+          disabled={!isValid}
+          size="large"
+        >
           Зареєструватись
         </Button>
 
         <Link to="/login" className={styles.redirect}>
-          {' '}
+          {" "}
           Вже маєте аккаунт? Авторизуйтесь
         </Link>
       </form>

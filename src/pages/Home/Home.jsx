@@ -1,22 +1,22 @@
-import React from 'react';
-import ImageSlider from '../../components/ImageSlider/ImageSlider';
-import FilterSection from '../../layout/FilterSection/FilterSection';
-import ItemsSection from '../../layout/ItemsSection/ItemsSection';
-import DeliveryInfo from '../../layout/DeliveryInfo/DeliveryInfo';
+import React from "react";
+import ImageSlider from "../../components/ImageSlider/ImageSlider";
+import Filter from "../../layout/Filter/Filter";
+import AllItems from "../../layout/AllItems/AllItems";
+import DeliveryInfo from "../../layout/DeliveryInfo/DeliveryInfo";
 
-function Home() {
-    React.useEffect(() => {
-        window.scrollTo(0, 0);
-      }, []);
+const Home = () => {
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
-    return (
-        <>
-            <ImageSlider />
-            <FilterSection />
-            <ItemsSection />
-            <DeliveryInfo />
-        </>
-    );
+  return (
+    <>
+      <ImageSlider />
+      <Filter />
+      <AllItems />
+      <DeliveryInfo />
+    </>
+  );
 };
 
 export default Home;

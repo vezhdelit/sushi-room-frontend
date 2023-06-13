@@ -7,7 +7,6 @@ import useOnclickOutside from "react-cool-onclickoutside";
 import { TextField } from "@mui/material";
 
 import styles from "./Autocomplete.module.scss";
-import { useEffect } from "react";
 
 const Autocomplete = ({ isLoaded, onSelect }) => {
   const {

@@ -1,12 +1,12 @@
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
-import { ReactComponent as MasterCardLogo } from '../../assets/svg/master-card.svg';
-import { ReactComponent as VisaLogo } from '../../assets/svg/visa.svg';
+import { ReactComponent as MasterCardLogo } from "../../assets/svg/master-card.svg";
+import { ReactComponent as VisaLogo } from "../../assets/svg/visa.svg";
 
-import MapImg from '../../assets/img/map.png';
-import styles from './DeliveryInfo.module.scss';
+import MapImg from "../../assets/img/map.png";
+import styles from "./DeliveryInfo.module.scss";
 
-function DeliveryAndPayment() {
+const DeliveryInfo = () => {
   return (
     <div className={styles.blockContainer}>
       <div className={styles.container}>
@@ -38,6 +38,6 @@ function DeliveryAndPayment() {
       </div>
     </div>
   );
-}
+};
 
-export default DeliveryAndPayment;
+export default DeliveryInfo;

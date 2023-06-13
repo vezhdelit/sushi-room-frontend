@@ -1,4 +1,4 @@
-@import '../../../assets/scss/variables';
+@import "../../../assets/scss/variables";
 
 .userButton {
   margin-left: auto;
@@ -12,7 +12,7 @@
   .popup {
     font-size: 16px;
     position: absolute;
-    right:-6px;
+    right: -6px;
     margin-top: 10px;
     background: #ffffff;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.09);
@@ -33,7 +33,6 @@
           color: $red;
           font-weight: 700;
         }
-
       }
     }
   }
