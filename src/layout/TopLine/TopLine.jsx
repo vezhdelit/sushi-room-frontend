@@ -28,6 +28,11 @@ function TopHeader() {
             <li>
               <a href="/*">Підтримка</a>
             </li>
+            <li>
+              <Link to="/adminpanel">
+                Адмін панель
+              </Link>            
+            </li>
           </ul>
 
           <div className={styles.phone}>

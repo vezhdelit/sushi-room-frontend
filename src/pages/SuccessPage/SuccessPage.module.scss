@@ -1,0 +1,32 @@
+@import "../../assets/scss/variables";
+@import "../../assets/scss/global";
+
+.success {
+  display: block;
+  margin: 0 auto;
+  padding: 120px 0 200px;
+
+  svg {
+    display: flex;
+    width: 200px;
+    height: 200px;
+    margin: 0px auto;
+    color: rgb(69, 167, 94);
+  }
+  .text {
+    margin-top: 30px;
+    text-align: center;
+    p {
+      font-size: 20px;
+      font-weight: 300;
+      color: $dark-gray;
+    }
+  }
+
+  .toMainPage {
+    display: flex;
+    margin: 40px auto;
+    align-items: center;
+    justify-content: center;
+  }
+}

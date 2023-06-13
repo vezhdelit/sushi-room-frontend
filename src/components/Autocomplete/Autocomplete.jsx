@@ -1,9 +1,13 @@
-import React from 'react';
-import usePlacesAutocomplete, { getGeocode, getLatLng } from 'use-places-autocomplete';
-import useOnclickOutside from 'react-cool-onclickoutside';
+import React from "react";
+import usePlacesAutocomplete, {
+  getGeocode,
+  getLatLng,
+} from "use-places-autocomplete";
+import useOnclickOutside from "react-cool-onclickoutside";
+import { TextField } from "@mui/material";
 
-import styles from './Autocomplete.module.scss';
-import { useEffect } from 'react';
+import styles from "./Autocomplete.module.scss";
+import { useEffect } from "react";
 
 const Autocomplete = ({ isLoaded, onSelect }) => {
   const {
@@ -14,7 +18,7 @@ const Autocomplete = ({ isLoaded, onSelect }) => {
     init,
     clearSuggestions,
   } = usePlacesAutocomplete({
-    callbackName: 'YOUR_CALLBACK_NAME',
+    callbackName: "YOUR_CALLBACK_NAME",
     initOnMount: false,
     requestOptions: {
       /* Define search scope here */
@@ -41,7 +45,7 @@ const Autocomplete = ({ isLoaded, onSelect }) => {
       // Get latitude and longitude via utility functions
       getGeocode({ address: description }).then((results) => {
         const { lat, lng } = getLatLng(results[0]);
-        console.log('📍 Coordinates: ', { lat, lng });
+        console.log("📍 Coordinates: ", { lat, lng });
         onSelect({ lat, lng });
       });
     };
@@ -68,15 +72,16 @@ const Autocomplete = ({ isLoaded, onSelect }) => {
 
   return (
     <div ref={ref}>
-      <input
+      <TextField
         type="text"
-        className={styles.input}
         value={value}
         onChange={handleInput}
         disabled={!ready}
-        placeholder="Введіть адресу доставки.."
-      ></input>
-      {status === 'OK' && <ul>{renderSuggestions()}</ul>}
+        label="Введіть адресу доставки.."
+      />
+      {status === "OK" && (
+        <ul className={styles.popup}>{renderSuggestions()}</ul>
+      )}
     </div>
   );
 };
