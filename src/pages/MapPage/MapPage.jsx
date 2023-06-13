@@ -1,4 +1,6 @@
 import React from 'react';
+import ContentLoader from "react-content-loader"
+
 import { useJsApiLoader } from '@react-google-maps/api';
 
 const MAPS_API_KEY = import.meta.env.VITE_MAPS_API_KEY;
@@ -16,7 +18,7 @@ const defaultCenter = {
 
 const libraries = ['places'];
 
-const MapPage = () => {
+const MapPage = (props) => {
   const [center, setCenter] = React.useState(defaultCenter);
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
@@ -30,14 +32,24 @@ const MapPage = () => {
 
   return (
     <div className={styles.container}>
-      <h2 className={styles.pageTitle}>Вкажіть вашу адресу</h2>
+      <h2 className={styles.pageTitle}>Перевірка зони доставки</h2>
       <div className={styles.content}>
         {isLoaded ? (
           <div className={styles.map}>
             <Map center={center} />
           </div>
         ) : (
-          <h2>Loading</h2>
+          <ContentLoader 
+          speed={2}
+          width={600}
+          height={400}
+          viewBox="0 0 600 400"
+          backgroundColor="#DDDDDD"
+          foregroundColor="#ecebeb"
+          {...props}
+        >
+          <rect x="0" y="0" rx="2" ry="2" width="600" height="400" />
+        </ContentLoader>
         )}
         <div className={styles.rightBlock}>
           <h4>Наша адреса</h4>

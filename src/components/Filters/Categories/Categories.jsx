@@ -13,7 +13,7 @@ function Categories() {
     const showOnlyFavourites = useSelector(state => state.filter.showOnlyFavourites)
     const isAuth = useSelector(selectIsAuth);
 
-    const categories = ['Всі', 'Роли', 'Суші', 'Напої', 'Десерти', 'Інше', 'Недоступне'];
+    const categories = ['Всі', 'Роли', 'Суші', 'Напої', 'Десерти', 'Соуси', 'Інше'];
 
     return (
         <div className={styles.categories}>

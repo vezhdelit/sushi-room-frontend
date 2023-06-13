@@ -69,7 +69,6 @@ const AddItemPage = () => {
         <input 
           type='file'
           onChange={handleChangeFile}
-          
           >
         </input>
 
