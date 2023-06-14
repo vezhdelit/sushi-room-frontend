@@ -23,9 +23,6 @@ const TopHeader = () => {
               <a href="/*">Відгуки</a>
             </li>
             <li>
-              <a href="/*">Наші ресторани</a>
-            </li>
-            <li>
               <a href="/*">Підтримка</a>
             </li>
             <li>
