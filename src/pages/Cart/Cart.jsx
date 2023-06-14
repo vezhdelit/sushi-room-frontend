@@ -39,7 +39,6 @@ const Cart = () => {
   };
   const onSetPromo = () => {
     const disc = discounts.find((disc) => disc.code === promo);
-    console.log(disc);
     dispatch(setDiscount(disc ? disc.discount : null));
   };
 
@@ -97,11 +96,11 @@ const Cart = () => {
             <div className={styles.discount}>
               <p>Знижка:</p>
               <span>
-                {discount * 100}% / {totalPrice * discount} грн
+                {discount * 100}% / {Math.round(totalPrice * discount)} грн
               </span>
             </div>
             <Link to="/map" className={styles.summary}>
-              <h3>{totalPrice - totalPrice * discount} грн</h3>
+              <h3>{totalPrice - Math.round(totalPrice * discount)} грн</h3>
               <Button size="large">Далі</Button>
             </Link>
           </div>

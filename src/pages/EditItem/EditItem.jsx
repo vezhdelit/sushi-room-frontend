@@ -72,7 +72,6 @@ const EditItem = () => {
   }, [item]);
 
   const onSubmit = async (values) => {
-    console.log(values);
     const data = await dispatch(editItem(values));
     if (data.payload) {
       alert("Товар відредаговано.");

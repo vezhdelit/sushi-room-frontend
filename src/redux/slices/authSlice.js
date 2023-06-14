@@ -25,7 +25,6 @@ export const fetchAuth = createAsyncThunk("auth/fetchAuthStatus", async () => {
 export const deleteAuth = createAsyncThunk(
   "auth/deleteAuthStatus",
   async () => {
-    console.log("delete");
     const response = await axios.delete(`/auth`);
     return response.data;
   }

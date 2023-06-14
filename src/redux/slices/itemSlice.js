@@ -39,7 +39,6 @@ export const addItem = createAsyncThunk(
 export const editItem = createAsyncThunk(
   "fetch/editItemStatus",
   async (params) => {
-    console.log(params);
     const response = await axios.patch(`items/${params._id}`, params);
     return response.data;
   }

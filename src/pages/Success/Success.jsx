@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 
 import Button from "../../components/Buttons/Button/Button";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
-import { clearAllItems } from "../../redux/slices/cartSlice";
+import { clearAllItems, setDiscount } from "../../redux/slices/cartSlice";
 
 import styles from "./Success.module.scss";
 
@@ -12,6 +12,7 @@ const Success = () => {
   const dispatch = useDispatch();
   React.useEffect(() => {
     dispatch(clearAllItems());
+    dispatch(setDiscount(0));
   }, []);
   return (
     <div className={styles.container}>
