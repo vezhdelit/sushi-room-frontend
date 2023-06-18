@@ -12,6 +12,8 @@ import Button from "../../components/Buttons/Button/Button";
 import styles from "./EditItem.module.scss";
 import { editItem } from "../../redux/slices/itemSlice";
 
+const SERVER_URL = import.meta.env.VITE_SERVER_URL;
+
 const EditItem = () => {
   const dispatch = useDispatch();
   const [imgUrl, setImgUrl] = React.useState("");
@@ -22,11 +24,8 @@ const EditItem = () => {
       const file = event.target.files[0];
       formData.append("image", file);
       const { data } = await axios.post("/upload", formData);
-      setImgUrl(`https://sushi-room-backend.herokuapp.com${data.url}`);
-      setValue(
-        "imageUrl",
-        `https://sushi-room-backend.herokuapp.com${data.url}`
-      );
+      setValue("imageUrl", `${SERVER_URL}/upload/${data.url}`);
+      setImgUrl(`${SERVER_URL}/upload/${data.url}`);
     } catch (error) {
       console.log(error);
       alert("Помилка при завантаженні файлу");
